@@ -1,0 +1,86 @@
+﻿@model ApplicationManagementApp.Models.ViewModels.Clothes.GarmetDetailsVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="col-lg-10 col-lg-offset-1 col-sm-11 col-sm-offset-1 col-xs-3 col-xs-offset-1 column">
+    <h2>Details for selected product:</h2>
+</div>
+
+<br />
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model.Pictures)
+        {
+            <div class="col-md-3 col-md-offset-1">
+                <img class="card-img-top" src="@item.PictureSourse" alt="" />
+            </div>
+        }
+    </div>
+</div>
+
+<br />
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-lg-8 col-lg-offset-3 col-md-8 col-md-offset-2 col-xs-3 col-xs-offset-1 column">
+            <table class="table table-bordered table-hover" id="tab_logic">
+                <thead>
+                    <tr>
+                        <th class="text-left">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th class="text-left">
+                            @Html.DisplayNameFor(model => model.Type)
+                        </th>
+                        <th class="text-left">
+                            @Html.DisplayNameFor(model => model.Quantity)
+                        </th>
+                        <th class="text-left">
+                            @Html.DisplayNameFor(model => model.Size)
+                        </th>
+                        <th class="text-left">
+                            @Html.DisplayNameFor(model => model.SinglePrice)
+                        </th>
+                        <th class="text-left">
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Type)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Quantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Size)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.SinglePrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Description)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="col-lg-8 col-lg-offset-3 col-md-8 col-md-offset-2 col-xs-3 col-xs-offset-1 column">
+    @Html.ActionLink("Back to list", "Index", null, new { @class = "btn btn-primary" })
+</div>
+
+
+
+

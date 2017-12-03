@@ -1,0 +1,84 @@
+﻿@model ApplicationManagementApp.Models.ViewModels.Clothes.GarmetDetailsVM
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div class="col-lg-10 col-lg-offset-1">
+        <h4>Details for product:</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Size)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Size)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SinglePrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SinglePrice)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+        </dl>
+    </div>
+    <div class="container">
+        <div class="row col-lg-10 col-lg-offset-1">
+            @foreach (var item in Model.Pictures)
+            {
+                <div class="col-md-4">
+                    <img class="card-img-top" src="@item.PictureSourse" alt="" />
+                </div>
+            }
+        </div>
+    </div>
+
+    <br />
+
+    <div class="col-lg-10 col-lg-offset-1">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Back to List", "All", null, new { @class = "btn btn-primary" })
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "ItemNotFound";
+}
+
+<div class="row col-lg-10 col-lg-offset-1">
+    <h2 class="text-danger">The item you are looking for is not found!</h2>
+    <h4>Please, select existing item from the store.</h4>
+</div>
+
+<br />
+
+<div class="row col-lg-10 col-lg-offset-1">
+    @Html.ActionLink("Back", "all", null, new { @class = "btn btn-primary" })
+</div>
+

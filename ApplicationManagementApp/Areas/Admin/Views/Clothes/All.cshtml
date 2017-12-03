@@ -1,0 +1,78 @@
+﻿@model IEnumerable<ApplicationManagementApp.Models.ViewModels.Clothes.AllAvailableClothesVM>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>All</title>
+</head>
+
+<br />
+
+<body>
+    <div class="col-lg-10 col-lg-offset-1">
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+    </div>
+    <div>
+        <br />
+    </div>
+    <br />
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-10 col-lg-offset-1 column">
+                <table class="table table-bordered table-hover" id="tab_logic">
+                    <thead>
+                        <tr>
+                            <th class="text-left">
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th class="text-left">
+                                @Html.DisplayNameFor(model => model.Type)
+                            </th>
+                            <th class="text-left">
+                                @Html.DisplayNameFor(model => model.Quantity)
+                            </th>
+                            <th class="text-left">
+                                @Html.DisplayNameFor(model => model.SinglePrice)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      @if (Model != null)
+                      {
+                        foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Type)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SinglePrice)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                </td>
+                            </tr>
+
+
+                        }
+                      }
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<ApplicationManagementApp.Models.ViewModels.Clothes.AllAvailableClothesVM>
+
+@{
+    ViewBag.Title = "All Available Clothes";
+}
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-lg-8 col-lg-offset-3 col-md-8 col-md-offset-2 col-xs-3 column">
+            <h2>All available clothes in the store: </h2>
+            <br />
+            <table class="table table-bordered table-hover" id="tab_logic">
+                <thead>
+                    <tr>
+                        <th class="text-center">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th class="text-center">
+                            @Html.DisplayNameFor(model => model.Type)
+                        </th>
+                        <th class="text-center">
+                            @Html.DisplayNameFor(model => model.Quantity)
+                        </th>
+                        <th class="text-center">
+                            @Html.DisplayNameFor(model => model.SinglePrice)
+                        </th>
+                        <th class="text-center">
+                            Details
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Type)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SinglePrice)
+                            </td>
+                            <td>
+                               @Html.ActionLink("Details", "Details", new { id = item.Id}, new { @class = "btn btn-primary" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
